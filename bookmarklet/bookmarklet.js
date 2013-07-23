@@ -48,12 +48,12 @@ if (typeof w === 'object') {
             return res;
         };
         
-        alert('ACRExtensions Copy is now active.');
+        alert('ACRExtensions is now active.');
     } else {
-        alert('ACRExtensions Copy is already active.');
+        alert('ACRExtensions is already active.');
     }
 } else {
-    alert('Error: ACRExtensions Copy is not active. Te Amazon Cloud Reader window could not be found.');
+    alert('Error: ACRExtensions is not active. Te Amazon Cloud Reader window could not be found.');
 }
 })();
 
