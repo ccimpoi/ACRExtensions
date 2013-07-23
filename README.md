@@ -15,3 +15,5 @@ In your browser do an "Add bookmark" action on the Bookmarks Bar and enter "ACRE
 Once you have the bookmarklet set up you just need to click on it once right after the Amazon Cloud Read app is loaded.
 
 Source available in the bookmarklet folder.
+
+Tested on Chrome and FF on OSX and Ubuntu.
