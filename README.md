@@ -2,9 +2,9 @@
 
 Amazon Cloud Reader extensions
 
-## Copy Bookmarklet
+## Browser Bookmarklet
 
-This bookmarklet adds ebables you to copy the text yu select in the Amazon Cloud Reader browser app.
+This bookmarklet enables you to copy the text you select in the Amazon Cloud Reader browser app to the clipboard.
 
 It will make an extra Copy button in addition to Highlight and Note that will prompt the selected text so the user can easily copy it.
 
