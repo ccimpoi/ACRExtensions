@@ -15,4 +15,4 @@ Once you have the bookmarklet set up you just need to click on it once right aft
 
 Source available in the bookmarklet folder.
 
-Tested on Chrome and FF on OSX and Ubuntu.
+Tested on Chromium, Safari and FF on OSX, Chromium on Ubuntu and Chrome on WinXP.
