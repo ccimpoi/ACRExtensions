@@ -14,5 +14,5 @@ Once you have the bookmarklet set up you just need to click on it once right aft
 
 Source available in the bookmarklet folder.
 
-Tested in Chrome and FF on Ubuntu. The bookmarklet uses document ranges so it may not work in all browsers especially IE.
+Tested in Chrome and FF on Ubuntu and OSX. The bookmarklet uses document ranges so it may not work in all browsers especially IE.
 
