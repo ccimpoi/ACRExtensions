@@ -24,20 +24,26 @@ if (typeof w === 'object') {
         var oldMethod = kObj.show;
         kObj.show = function () {
             var res = oldMethod.apply(kObj, arguments);
+            var txtDoc = null;
+            var r = null;
+
             if (typeof (arguments[3]) !== 'undefined' && typeof (arguments[3]['start']) !== 'undefined') {
-                var sId = arguments[3].start;
-                var eId = arguments[3].end;
-                var outArr = {};
+                var sId = arguments[3]['start'];
+                var eId = arguments[3]['end'];
+
                 $('iframe', kDoc).each(function (j, textIframe) {
-                    for (var elId=sId;elId<=eId;elId++) {
-                        $('#'+elId, $(textIframe).contents()).each(function (k, textSpan) {
-                            outArr[elId] = $(textSpan).text();
-                        });
+                    var textIFrameDoc = $(textIframe).contents().get(0);
+                    if ($('#'+sId, textIFrameDoc).get(0)) {
+                        txtDoc = textIFrameDoc;
+                        return false;
                     }
                 });
 
-                var outStr = '';
-                for (var p in outArr) outStr += ' ' + outArr[p];
+                if (txtDoc) {
+                    r = txtDoc.createRange();
+                    r.setStartBefore($('#'+sId, txtDoc).get(0));
+                    r.setEndAfter($('#'+eId, txtDoc).get(0));
+                }
             }
 
             $('#ACRExtensions_copyB_sep', kDoc).remove();
@@ -46,7 +52,10 @@ if (typeof w === 'object') {
             var copyB = $('<div id="ACRExtensions_copyB" class="kindle_menu_button button_enabled ui-corner-left">Copy</div>');
             $('#kindle_menu_border', kDoc).append(sepEl).append(copyB);
             $('#ACRExtensions_copyB', kDoc).click(function (evt) {
-                w.prompt('Selection:', outStr);
+                if (r) {
+                    var newW = window.open(null, null, "height=400,width=400,location=0,menubar=0,scrollbars=1,toolbar=0");
+                    newW.document.body.appendChild(r.cloneContents());
+                }
             });
 
             return res;
