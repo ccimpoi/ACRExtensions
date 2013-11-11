@@ -32,16 +32,17 @@ if (typeof w === 'object') {
                 var eId = arguments[3]['end'];
 
                 $('iframe', kDoc).each(function (j, textIframe) {
-                    if ($('#'+sId, $(textIframe))) {
-                        txtDoc = $(textIframe).contents();
+                    var textIFrameDoc = $(textIframe).contents().get(0);
+                    if ($('#'+sId, textIFrameDoc).get(0)) {
+                        txtDoc = textIFrameDoc;
                         return false;
                     }
                 });
 
                 if (txtDoc) {
                     r = txtDoc.createRange();
-                    r.setStartBefore($('#'+sId, txtDoc).first());
-                    r.setEndAfter($('#'+eId, txtDoc).first());
+                    r.setStartBefore($('#'+sId, txtDoc).get(0));
+                    r.setEndAfter($('#'+eId, txtDoc).get(0));
                 }
             }
 
@@ -52,7 +53,7 @@ if (typeof w === 'object') {
             $('#kindle_menu_border', kDoc).append(sepEl).append(copyB);
             $('#ACRExtensions_copyB', kDoc).click(function (evt) {
                 if (r) {
-                    var newW = window.open(null, null, "height=400,width=400");
+                    var newW = window.open(null, null, "height=400,width=400,location=0,menubar=0,scrollbars=1,toolbar=0");
                     newW.document.body.appendChild(r.cloneContents());
                 }
             });
