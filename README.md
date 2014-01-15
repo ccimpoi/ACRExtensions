@@ -14,6 +14,8 @@ In your browser do an "Add bookmark" action on the Bookmarks Bar and enter "ACRE
 
 Once you have the bookmarklet set up you just need to click on it once right after the Amazon Cloud Read app is loaded.
 
+Important note regarding the issue of the Copy button not showing up. This is pretty hard to reproduce but it still happens some times. The fix is to reload the browser page and click again on the bookmarklet button. It always works for me.
+
 Source available in the bookmarklet folder.
 
 Tested in Chrome and FF on Ubuntu and OSX. The bookmarklet uses document ranges so it may not work in all browsers especially IE.
