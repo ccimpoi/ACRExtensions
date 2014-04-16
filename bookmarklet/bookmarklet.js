@@ -4,6 +4,10 @@ var w = null;
 var kDoc = null;
 var kObj = null;
 
+function copyToClipboard(text) {
+  window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
+}
+
 if (typeof window.KindleReaderContextMenu !== 'undefined') {
     w = window;
 } else if (window.length) {
@@ -53,8 +57,7 @@ if (typeof w === 'object') {
             $('#kindle_menu_border', kDoc).append(sepEl).append(copyB);
             $('#ACRExtensions_copyB', kDoc).click(function (evt) {
                 if (r) {
-                    var newW = window.open(null, null, "height=400,width=400,location=0,menubar=0,scrollbars=1,toolbar=0");
-                    newW.document.body.appendChild(r.cloneContents());
+		    copyToClipboard(r.cloneContents().textContent);
                 }
             });
 
@@ -69,4 +72,3 @@ if (typeof w === 'object') {
     alert('Error: ACRExtensions is not active. Te Amazon Cloud Reader window could not be found.');
 }
 })();
-
