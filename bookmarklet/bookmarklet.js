@@ -53,7 +53,7 @@ if (typeof w === 'object') {
             $('#kindle_menu_border', kDoc).append(sepEl).append(copyB);
             $('#ACRExtensions_copyB', kDoc).click(function (evt) {
                 if (r) {
-                    var newW = window.open(null, null, "height=400,width=400,location=0,menubar=0,scrollbars=1,toolbar=0");
+                    var newW = window.open('', 'ACRExtensions', "height=400,width=400,location=0,menubar=0,scrollbars=1,toolbar=0");
                     newW.document.body.appendChild(r.cloneContents());
                 }
             });
