@@ -51,6 +51,10 @@ if (typeof w === 'object') {
             var sepEl = $('<div id="ACRExtensions_copyB_sep" class="kindle_menu_separator"></div>');
             var copyB = $('<div id="ACRExtensions_copyB" class="kindle_menu_button button_enabled ui-corner-left">Copy</div>');
             $('#kindle_menu_border', kDoc).append(sepEl).append(copyB);
+            setTimeout(function(){
+                sepEl.show();
+                copyB.removeClass('button_hidden');
+            }, 500);
             $('#ACRExtensions_copyB', kDoc).click(function (evt) {
                 if (r) {
                     var newW = window.open('', 'ACRExtensions', "height=400,width=400,location=0,menubar=0,scrollbars=1,toolbar=0");
