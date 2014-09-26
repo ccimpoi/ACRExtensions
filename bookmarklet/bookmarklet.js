@@ -54,7 +54,7 @@ if (typeof w === 'object') {
             setTimeout(function(){
                 sepEl.show();
                 copyB.removeClass('button_hidden');
-            }, 500);
+            }, 1);
             $('#ACRExtensions_copyB', kDoc).click(function (evt) {
                 if (r) {
                     var newW = window.open('', 'ACRExtensions', "height=400,width=400,location=0,menubar=0,scrollbars=1,toolbar=0");
