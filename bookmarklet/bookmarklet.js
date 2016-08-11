@@ -57,7 +57,8 @@ if (typeof w === 'object') {
             }, 1);
             $('#ACRExtensions_copyB', kDoc).click(function (evt) {
                 if (r) {
-                    copyToClipboard(r.cloneContents().textContent)
+                    copyToClipboard(r.cloneContents().textContent);
+                    $('.ui-widget-content', kDoc).hide();
                 }
             });
 
