@@ -57,10 +57,23 @@ if (typeof w === 'object') {
             }, 1);
             $('#ACRExtensions_copyB', kDoc).click(function (evt) {
                 if (r) {
-                    var newW = window.open('', 'ACRExtensions', "height=400,width=400,location=0,menubar=0,scrollbars=1,toolbar=0");
-                    newW.document.body.appendChild(r.cloneContents());
+                    copyToClipboard(r.cloneContents().textContent)
                 }
             });
+
+            var copyToClipboard = function(textToCopy){
+                $("body")
+                    .append($('<input type="text" display="none" name="fname" class="textToCopyInput"/>' )
+                    .val(textToCopy))
+                    .find(".textToCopyInput")
+                    .select();
+                  try {
+                    var successful = document.execCommand('copy');
+                  } catch (err) {
+                    window.prompt("To copy the text to clipboard: Ctrl+C, Enter", textToCopy);
+                  }
+                 $(".textToCopyInput").remove();
+            };
 
             return res;
         };
