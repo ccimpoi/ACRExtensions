@@ -59,6 +59,7 @@ if (typeof w === 'object') {
                 if (r) {
                     copyToClipboard(r.cloneContents().textContent);
                     $('.ui-widget-content', kDoc).hide();
+                    $('#annotation-section', txtDoc).remove();
                 }
             });
 
