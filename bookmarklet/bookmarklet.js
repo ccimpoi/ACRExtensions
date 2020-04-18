@@ -33,7 +33,7 @@ if (typeof w === 'object') {
 
                 $('iframe', kDoc).each(function (j, textIframe) {
                     var textIFrameDoc = $(textIframe).contents().get(0);
-                    if ($('#'+sId, textIFrameDoc).get(0)) {
+                    if ($('#'+sId, textIFrameDoc).get(0) && $('#'+eId, textIFrameDoc).get(0)) {
                         txtDoc = textIFrameDoc;
                         return false;
                     }
