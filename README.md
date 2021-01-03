@@ -10,13 +10,14 @@ This bookmarklet enables you easily copy the text you select in the Amazon Cloud
 
 Once activated, the bookmarklet will create an extra Copy button in addition to Highlight and Note that will open the selected text in a popup window so the user can easily copy it and also keep the basic HTML formatting.
 
+Once activated, the bookmarklet will override the Highlight function and add a prompt where the user can choose to continue with the highlighting action or copy the text in a new popup window and keep the basic HTML formatting.
+
+Please note that altough the text remains highlighted after copying, the highlight is not actually saved to the server and is only a local cache.
+
 In your browser do an "Add bookmark" action on the Bookmarks Bar and enter "ACRExtensions" for the name and copy and paste the bookmarklet code from the [raw source](https://raw.github.com/binarycrafts/ACRExtensions/master/bookmarklet/bookmarklet.js).
 
 Once you have the bookmarklet set up you just need to click on it once right after the Amazon Cloud Read app is loaded.
 
-Important note regarding the issue of the Copy button not showing up. This is pretty hard to reproduce but it still happens some times. The fix is to reload the browser page and click again on the bookmarklet button. It always works for me.
-
 Source available in the bookmarklet folder.
 
-Tested in Chrome and FF on Ubuntu and OSX. The bookmarklet uses document ranges so it may not work in all browsers especially IE.
-
+Tested in Chrome and FF on OSX. The bookmarklet uses document ranges so it may not work in all browsers especially IE.
