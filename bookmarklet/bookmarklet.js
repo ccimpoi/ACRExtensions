@@ -22,7 +22,6 @@ javascript: (function () {
                         });
         
                         if (txtDoc) {
-                            console.log(txtDoc);
                             r = txtDoc.createRange();
                             r.setStartBefore($('#'+sId, txtDoc).get(0));
                             r.setEndAfter($('#'+eId, txtDoc).get(0));
