@@ -1,4 +1,12 @@
-# ACRExtensions
+# ACRExtensions (not working anymore)
+
+I checked the new reader and they totally moved everything server side.
+Client gets only images and highlight is done using empty DIVs with server side provided coordinates.
+Looks like the end of the road...
+:-(
+
+
+Previous description:
 
 Amazon Cloud Reader extensions
 
